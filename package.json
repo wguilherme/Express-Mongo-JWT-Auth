@@ -1,4 +1,11 @@
 {
+
+  "name": "authjwtmongo",
+  "version": "1.0.0",
+  "main": "index.js",
+
+  "scripts":{"start" : "env-cmd -f ./.env nodemon src/app.js"},
+
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "env-cmd": "^10.0.1",
