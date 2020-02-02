@@ -2,23 +2,11 @@ const express = require('express')
 const User = require('../models/User')
 const auth = require('../middleware/auth')
 const router = express.Router()
-const bcrypt = require("bcrypt");
 
 router.post('/users', async (req, res) => {
     // Create a new user
     try {
         const user = new User(req.body)    
-
-        console.log(req.body)
-
-        //password hash
-        //TODO ANCHOR Implement password hash with database
-        const salt = await bcrypt.genSalt(8);
-        const hash = await bcrypt.hash(user.password, salt);
-
-        console.log(hash)
-
-        
         await user.save()
         const token = await user.generateAuthToken()
         res.status(201).send({ user, token })
