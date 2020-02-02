@@ -1,38 +1,40 @@
-// // item.js
-// const middlewareAuth = require('../middleware/auth');
-// const express = require('express')
-// const User = require('../models/User')
-// // const auth = require('../middleware/auth')
+const express = require('express')
+//models
+const Item = require('../models/Item')
+const router = express.Router()
+const middlewareAuth = require('../middleware/auth');
+const auth = require('../middleware/auth')
 
-// const router = express.Router()
+router.post('/items', auth, async (req, res) => {
+   // Create a new item
+   try {
 
-// // create item
-// router.post('/items', middlewareAuth.auth, (req, res) => {
 
-//     console.log('post items')
+
+       const item = new Item({
+        title: req.body.title,
+        description: req.body.description,
+        user: req.user._id
+        })    
+
+        //salva o item
+        await item.save()
+
+
+        //save item in the user
+                
+        console.log(user);
+        
+        user.items.push(item)
+        await user.save()
+
+   
+   
   
-//     const body = req.body;
-  
-//     const item = new Item({
-//       title: body.title,
-//       description: body.description,
-//       price: body.price,
-//       user: req.user._id
-//     });
+       res.status(201).send({item})
+   } catch (error) {
+       res.status(400).send(error)
+   }
+})
 
-//     item.save( (err, savedItem) => {
-  
-//         if ( err ) { // Error Handling }
-    
-//         res.status(201).json({
-//           ok: true,
-//           item: savedItem,
-//           userToken: req.user // for demo purpose
-//         });
-//       };
-//     })
-// })
-
-
-// //exporta acesso
-// module.exports = router
+module.exports = router

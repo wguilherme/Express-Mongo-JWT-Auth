@@ -30,7 +30,21 @@ const userSchema = mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }],
+
+    items : [
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Item'
+        }
+    ],
+
+    teste: {
+        type: String,
+        required: false
+    }
+    
+    
 })
 
 userSchema.pre('save', async function (next) {
@@ -65,5 +79,4 @@ userSchema.statics.findByCredentials = async (email, password) => {
 }
 
 const User = mongoose.model('User', userSchema)
-
 module.exports = User
