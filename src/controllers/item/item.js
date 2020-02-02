@@ -35,14 +35,33 @@ module.exports = {
       const userByItem = await Item.findById(id).populate('user');
       res.send(userByItem);
   },
+
+
    //retorna usuário de acordo com o item
     itemByUser : async (req,res) =>{    
+
       const { id } = req.params;
-      // res.json(req.params)
-      // desestruturação para pegar somente os items
-      const {items} = await User.findById(id).populate('item');
-      res.send(items);
-  }
+
+      const currentUser = User.findById(id);
+      
+   
+      Item.find({user:id}, (e, items) => {
+         // however you handle errors goes first
+         res.json({currentUser: req.user, items: items});
+      });
+      
+  },
+
+
+
+
+
+   //retorna usuário de acordo com o item
+//     backupItemByUser : async (req,res) =>{    
+//       const { id } = req.params;
+//       const {items} = await User.findById(id).populate('item');
+//       res.send(items);
+//   }
 }
 
 
