@@ -32,8 +32,19 @@ module.exports = {
     userByItem : async (req,res) =>{    
       const { id } = req.params;
       // res.json(req.params)
-      const userByItem = await Item.findById(id).populate('user');
-      res.send(userByItem);
+      // get user by id
+      let user = await Item.findById(id).populate('user');
+
+
+      //get some only some values
+      user = {
+         name: user.user.name,
+         email: user.user.email,
+         id: user.user._id
+      }
+
+      //return
+      res.json(user);
   },
 
 
