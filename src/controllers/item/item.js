@@ -11,7 +11,7 @@ module.exports = {
           user: req.user._id
           })    
       
-          //salva o item
+          //save item
           await item.save()
       
           //save item in the user
@@ -28,7 +28,7 @@ module.exports = {
 
     },
 
-   //retorna usuário de acordo com o item
+   //find user by item
     userByItem : async (req,res) =>{    
       const { id } = req.params;
       // res.json(req.params)
@@ -48,7 +48,7 @@ module.exports = {
   },
 
 
-   //retorna usuário de acordo com o item
+   //find all items from user
     itemByUser : async (req,res) =>{    
 
       const { id } = req.params;
