@@ -31,11 +31,17 @@ const userSchema = mongoose.Schema({
             required: true
         }
     }],
-
+//relationships
     items : [
         {
         type: mongoose.Schema.Types.ObjectId,
         ref:'Item'
+        }
+    ],
+    pets : [
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Pet'
         }
     ],
 
