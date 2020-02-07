@@ -1,19 +1,19 @@
-const express = require('express')
-const userRouter = require('./routers/user')
-const itemRouter = require('./routers/item')
-const customerRouter = require('./routers/customer')
-const petRouter = require('./routers/pet')
-const port = process.env.PORT
-require('./db/db')
+import express from "express";
+import userRouter from "./routers/user";
+import itemRouter from "./routers/item";
+import customerRouter from "./routers/customer";
+import petRouter from "./routers/pet";
+import("./db/db");
+const port = process.env.PORT;
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(userRouter)
-app.use(itemRouter)
-app.use(customerRouter)
-app.use(petRouter)
+app.use(express.json());
+app.use(userRouter);
+app.use(itemRouter);
+app.use(customerRouter);
+app.use(petRouter);
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`)
-})
+  console.log(`Server running on port ${port}`);
+});

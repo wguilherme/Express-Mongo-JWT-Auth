@@ -14,5 +14,8 @@
     "mongoose": "^5.8.9",
     "nodemon": "^2.0.2",
     "validator": "^12.2.0"
+  },
+  "devDependencies": {
+    "sucrase": "^3.12.1"
   }
 }

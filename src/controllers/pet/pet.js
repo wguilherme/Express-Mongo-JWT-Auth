@@ -1,4 +1,4 @@
-const Pet = require("../../models/Pet");
+import Pet from "../../models/Pet";
 // const User = require('../../models/User')
 
 module.exports = {
