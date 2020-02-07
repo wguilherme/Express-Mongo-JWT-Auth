@@ -3,36 +3,36 @@ import mongoose from "mongoose";
 const petSchema = mongoose.Schema({
   status: {
     type: String,
-    default: "Ativo"
+    default: "Ativo",
   },
   animal: {
-    type: String
+    type: String,
   },
   raca: {
-    type: String
+    type: String,
   },
   cor: {
-    type: String
+    type: String,
   },
   nome: {
-    type: String
+    type: String,
   },
   fotos: {
-    type: Array
+    type: Array,
   },
   descricao: {
-    type: String
+    type: String,
   },
   observacoes: {
-    type: String
+    type: String,
   },
   historia: {
-    type: String
+    type: String,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
-  }
+    ref: "User",
+  },
 });
 const Pet = mongoose.model("Pet", petSchema);
 

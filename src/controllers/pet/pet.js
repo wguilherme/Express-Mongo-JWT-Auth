@@ -13,13 +13,13 @@ module.exports = {
         fotos: req.body.fotos,
         descricao: req.body.desricao,
         observacoes: req.body.observacoes,
-        historia: req.body.historia
+        historia: req.body.historia,
       });
 
-      //save pet
+      // save pet
       await pet.save();
 
-      //save pet in the user
+      // save pet in the user
       user = req.user;
       //  console.log(user);
 
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   list: async (req, res) => {
-    let pet = await Pet.find();
+    const pet = await Pet.find();
     res.json(pet);
 
     // const status = pets ? 200 : 404;
@@ -42,5 +42,5 @@ module.exports = {
 
   search: async (req, res) => {
     res.json("Search route");
-  }
+  },
 };

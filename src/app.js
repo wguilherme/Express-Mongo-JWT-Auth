@@ -3,7 +3,9 @@ import userRouter from "./routers/user";
 import itemRouter from "./routers/item";
 import customerRouter from "./routers/customer";
 import petRouter from "./routers/pet";
-import("./db/db");
+
+require("./db/db");
+
 const port = process.env.PORT;
 
 const app = express();

@@ -7,13 +7,13 @@ module.exports = {
       const item = new Item({
         title: req.body.title,
         description: req.body.description,
-        user: req.user._id
+        user: req.user._id,
       });
 
-      //save item
+      // save item
       await item.save();
 
-      //save item in the user
+      // save item in the user
       user = req.user;
       console.log(user);
 
@@ -26,25 +26,25 @@ module.exports = {
     }
   },
 
-  //find user by item
+  // find user by item
   userByItem: async (req, res) => {
     const { id } = req.params;
     // res.json(req.params)
     // get user by id
     let user = await Item.findById(id).populate("user");
 
-    //get some only some values
+    // get some only some values
     user = {
       name: user.user.name,
       email: user.user.email,
-      id: user.user._id
+      id: user.user._id,
     };
 
-    //return
+    // return
     res.json(user);
   },
 
-  //find all items from user
+  // find all items from user
   itemByUser: async (req, res) => {
     const { id } = req.params;
 
@@ -52,11 +52,11 @@ module.exports = {
 
     Item.find({ user: id }, (e, items) => {
       // however you handle errors goes first
-      res.json({ currentUser: req.user, items: items });
+      res.json({ currentUser: req.user, items });
     });
-  }
+  },
 
-  //retorna usuário de acordo com o item
+  // retorna usuário de acordo com o item
   //     backupItemByUser : async (req,res) =>{
   //       const { id } = req.params;
   //       const {items} = await User.findById(id).populate('item');

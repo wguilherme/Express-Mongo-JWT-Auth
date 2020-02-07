@@ -17,7 +17,7 @@ router.post("/users", async (req, res) => {
 });
 
 router.post("/users/login", async (req, res) => {
-  //Login a registered user
+  // Login a registered user
   try {
     const { email, password } = req.body;
     const user = await User.findByCredentials(email, password);
@@ -33,7 +33,7 @@ router.post("/users/login", async (req, res) => {
   }
 });
 
-//Get current user
+// Get current user
 router.get("/users/me", auth, async (req, res) => {
   // View logged in user profile
   res.send(req.user);

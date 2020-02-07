@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   email: {
     type: String,
@@ -18,39 +18,39 @@ const userSchema = mongoose.Schema({
       if (!validator.isEmail(value)) {
         throw new Error({ error: "Invalid Email address" });
       }
-    }
+    },
   },
   password: {
     type: String,
     required: true,
-    minLength: 7
+    minLength: 7,
   },
   tokens: [
     {
       token: {
         type: String,
-        required: true
-      }
-    }
+        required: true,
+      },
+    },
   ],
-  //relationships
+  // relationships
   items: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Item"
-    }
+      ref: "Item",
+    },
   ],
   pets: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Pet"
-    }
+      ref: "Pet",
+    },
   ],
 
   teste: {
     type: String,
-    required: false
-  }
+    required: false,
+  },
 });
 
 userSchema.pre("save", async function(next) {
