@@ -14,7 +14,7 @@ module.exports = {
             await item.save();
 
             // save item in the user
-            user = req.user;
+            const user = req.user;
             console.log(user);
 
             user.items.push(item);
