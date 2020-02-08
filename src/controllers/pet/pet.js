@@ -49,4 +49,16 @@ module.exports = {
     search: async (req, res) => {
         res.json("Search route");
     },
+
+    searchAnimal: async (req, res) => {
+
+
+        const animal = req.body.animal;
+
+        const result = await Pet.find({animal: animal});
+
+        res.json(result)
+
+
+    }
 };
