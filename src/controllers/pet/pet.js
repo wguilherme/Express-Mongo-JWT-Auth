@@ -50,6 +50,12 @@ module.exports = {
         res.json("Search route");
     },
 
+    // paginate: async (req, res) => {
+    //     const { page = 1 } = req.query;
+    //     const pets = await Pet.paginate({}, {page, limit: 10});
+    //     return res.json(pets);
+    // },
+
     searchAnimal: async (req, res) => {
 
 

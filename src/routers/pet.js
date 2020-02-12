@@ -9,6 +9,8 @@ router.post("/pets", auth, Pet.create); // create pet
 
 //search and filters
 router.get("/pets/search/raca", Pet.searchAnimal); // filterByAnimal
+router.get("/pets/search", Pet.paginate); // filter with paginate
+
 router.get("/pets/search/:value", Pet.search); // create pet
 
 export default router;

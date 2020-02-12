@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+import mongoosePaginate from ("mongoosePaginate");
+
 
 const itemSchema = mongoose.Schema({
     title: {
@@ -15,6 +17,8 @@ const itemSchema = mongoose.Schema({
         ref: "User",
     },
 });
+
+ProductSchema.plugin(mongoosePaginate)
 
 const Item = mongoose.model("Item", itemSchema);
 export default Item;
