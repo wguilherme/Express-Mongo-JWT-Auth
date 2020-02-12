@@ -22,3 +22,6 @@ and then:
 ```
 yarn start
 ```
+
+V.
+0.0.1
