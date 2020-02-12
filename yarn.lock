@@ -232,6 +232,7 @@ __metadata:
   resolution: "authjwtmongo@workspace:."
   dependencies:
     bcryptjs: ^2.4.3
+    cors: ^2.8.5
     env-cmd: ^10.0.1
     eslint: ^6.8.0
     eslint-config-airbnb-base: ^14.0.0
@@ -607,6 +608,16 @@ __metadata:
   version: 1.0.2
   resolution: "core-util-is@npm:1.0.2"
   checksum: b2aeb723279455a85125383b7067e66d650187adee4151b6587bc28d8334c9d5ebbc6e4bd6c344355191865e1add46fdec83f2a7f4d83889cfe7e586d9fd50b6
+  languageName: node
+  linkType: hard
+
+"cors@npm:^2.8.5":
+  version: 2.8.5
+  resolution: "cors@npm:2.8.5"
+  dependencies:
+    object-assign: ^4
+    vary: ^1
+  checksum: 5c4967326b965b55f50546e29253cc60c04b9b690a7f0c337b02a6c7c863f261c13ea5812ce16b3855f946330332157632f6070fa70d5bbe643ed30bbc96e150
   languageName: node
   linkType: hard
 
@@ -2500,7 +2511,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4.0.1, object-assign@npm:^4.1.0":
+"object-assign@npm:^4, object-assign@npm:^4.0.1, object-assign@npm:^4.1.0":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: 8a281400d57a8880141ceb4335061b17e2d21405b2d5909e3fd71948d6b10f366c65d71a62aac27a0e45754a5e467bcc3f6ff78f26a929948d751b582b46d14e
@@ -3807,7 +3818,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"vary@npm:~1.1.2":
+"vary@npm:^1, vary@npm:~1.1.2":
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: 09e07d2b27e4a8689e1af67a03ca4402aebc2c0e1bf72d1b17cdc9b136eccc4b543072db314fd4dea15f1462c9de2773ceecbd1271eef6506520171f6fc14430
