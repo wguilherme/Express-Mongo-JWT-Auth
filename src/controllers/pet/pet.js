@@ -1,5 +1,6 @@
 import Pet from "../../models/Pet";
 import User from "../../models/User";
+
 // const User = require('../../models/User')
 
 module.exports = {
@@ -12,11 +13,13 @@ module.exports = {
                 raca: req.body.raca,
                 cor: req.body.cor,
                 nome: req.body.nome,
-                fotos: req.body.fotos,
+                fotos: req.file,
                 descricao: req.body.descricao,
                 observacoes: req.body.observacoes,
                 historia: req.body.historia,
             });
+
+
 
 
             // save pet
