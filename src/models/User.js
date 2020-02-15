@@ -46,11 +46,10 @@ const userSchema = mongoose.Schema({
             ref: "Pet",
         },
     ],
-
-    teste: {
-        type: String,
-        required: false,
-    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    }
 });
 
 userSchema.pre("save", async function(next) {
