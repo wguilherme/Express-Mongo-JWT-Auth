@@ -1,12 +1,12 @@
 export default {
-    host: "smtp.mailtrap.io",
+    host: process.env.HOST,
   port: 2525,
   secure: false, //mailtrap does not require
   auth: {
-    user: "8abbfc72c5d06c",
-    pass: "7232715ae3d9e5"
+    user: process.env.AUTH_USER,
+    pass: process.env.AUTH_PASSWORD,
   },
   default: {
-      from: "System<noreply@app.com>", //from default
+      from: process.env.FROM, //from default
   }
 }
