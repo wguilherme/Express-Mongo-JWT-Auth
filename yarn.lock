@@ -252,6 +252,7 @@ __metadata:
     mongoose: ^5.8.9
     morgan: ^1.9.1
     multer: ^1.4.2
+    nodemailer: ^6.4.2
     nodemon: ^2.0.2
     prettier: ^1.19.1
     sucrase: ^3.12.1
@@ -2504,6 +2505,13 @@ fsevents@~2.1.2:
   version: 1.0.0
   resolution: "node-modules-regexp@npm:1.0.0"
   checksum: bd567c873c1128e0ccf64e52eb68dea190d19920a91df45dfe481f51bf934a7e644402da1edd1ea4a8e94497a872926da2c90487cf9864229a33f65827136131
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^6.4.2":
+  version: 6.4.2
+  resolution: "nodemailer@npm:6.4.2"
+  checksum: 3508034c928b67d1b2a41cfcad1f784c81408ae018a4aba080f1337acde238cabd7bed4fbec57b8ec7b80aeef7c9f7226064e861e382c2be4dccfeb15b46c914
   languageName: node
   linkType: hard
 

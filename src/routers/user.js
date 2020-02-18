@@ -3,14 +3,35 @@ import User from "../models/User";
 import auth from "../middleware/auth";
 
 const router = express.Router();
+import Mail from '../lib/Mail';
 
 router.post("/users", async (req, res) => {
     // Create a new user
     try {
-        const user = new User(req.body);
+        const { email, name, password } = req.body; //infos
+
+        const user = new User({email, name, password});
         await user.save();
         const token = await user.generateAuthToken();
         res.status(201).send({ user, token });
+        //after user creation
+
+
+
+
+
+        console.log('User created!');
+
+        await Mail.send({
+            to: email,
+            subject: "Account created! Welcome",
+            text: `Hello ${name}, welcome to our  app`,
+        })
+
+        console.log('Mail sent');
+
+
+
     } catch (error) {
         res.status(400).send(error);
     }
