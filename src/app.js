@@ -1,9 +1,9 @@
 import express from "express";
+import cors from "cors";
 import userRouter from "./routers/user";
 import itemRouter from "./routers/item";
 import customerRouter from "./routers/customer";
 import petRouter from "./routers/pet";
-import cors from "cors";
 
 require("./db/db");
 
