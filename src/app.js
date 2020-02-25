@@ -1,11 +1,9 @@
-const express = require("express");
 import cors from "cors";
+import express from "express";
 import userRouter from "./routers/user";
 import itemRouter from "./routers/item";
 import customerRouter from "./routers/customer";
 import petRouter from "./routers/pet";
-
-
 
 require("./db/db");
 
