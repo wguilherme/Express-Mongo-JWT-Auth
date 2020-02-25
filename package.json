@@ -2,8 +2,9 @@
   "name": "authjwtmongo",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start-heroku": "node src/app.js",
+    "start-heroku": "node --experimental-modules src/app.js",
     "start": "env-cmd -f ./.env node src/app.js",
     "dev": "env-cmd -f ./.env nodemon src/app.js"
   },
