@@ -17,6 +17,9 @@ const petSchema = mongoose.Schema({
     nome: {
         type: String,
     },
+    fotos: {
+        type: Array,
+    },
     descricao: {
         type: String,
     },
@@ -24,22 +27,6 @@ const petSchema = mongoose.Schema({
         type: String,
     },
     historia: {
-        type: String,
-    },
-    //fotos
-    // fotos: {
-    //     type: Array,
-    // },
-    name: {
-        type: String,
-    },
-    size: {
-        type: String,
-    },
-    key: {
-        type: String,
-    },
-    url: {
         type: String,
     },
     user: {
