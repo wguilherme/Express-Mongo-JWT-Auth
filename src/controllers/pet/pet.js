@@ -6,6 +6,9 @@ import User from "../../models/User";
 module.exports = {
 
     create: async (req, res) => {
+
+        //destructuring req.file
+        const {originalName: name, size, filename: key } = req.file;
         try {
             const pet = new Pet({
                 user: req.user._id,
@@ -13,7 +16,11 @@ module.exports = {
                 raca: req.body.raca,
                 cor: req.body.cor,
                 nome: req.body.nome,
-                fotos: req.file,
+                //fotos
+                name,
+                size,
+                key,
+                url: "",
                 descricao: req.body.descricao,
                 observacoes: req.body.observacoes,
                 historia: req.body.historia,
