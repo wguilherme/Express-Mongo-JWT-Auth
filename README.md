@@ -16,7 +16,7 @@ Rest API with JWT Authentication &amp; Authorization in NodeJs and Express + Mon
 
 Project using yarn, run:
 ```
-yarn install
+yarn
 ```
 and then:
 ```
